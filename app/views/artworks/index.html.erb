@@ -1,0 +1,30 @@
+<h1>Listing artworks</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Img width</th>
+    <th>Img height</th>
+    <th>Year</th>
+  </tr>
+
+<% @artworks.each do |artwork| %>
+  <tr>
+    <td><%=h artwork.title %></td>
+    <td><%=h artwork.width %></td>
+    <td><%=h artwork.height %></td>
+    <td><%=h artwork.img_width %></td>
+    <td><%=h artwork.img_height %></td>
+    <td><%=h artwork.year %></td>
+    <td><%= link_to 'Show', artwork %></td>
+    <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
+    <td><%= link_to 'Destroy', artwork, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New artwork', new_artwork_path %>

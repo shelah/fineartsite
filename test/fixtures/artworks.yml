@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  width: 1.5
+  height: 1.5
+  img_width: 
+  img_height: 
+  year: 
+
+two:
+  title: MyString
+  width: 1.5
+  height: 1.5
+  img_width: 
+  img_height: 
+  year: 

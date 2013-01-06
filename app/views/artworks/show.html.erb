@@ -1,0 +1,33 @@
+<p>
+  <b>Title:</b>
+  <%=h @artwork.title %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%=h @artwork.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h @artwork.height %>
+</p>
+
+<p>
+  <b>Img width:</b>
+  <%=h @artwork.img_width %>
+</p>
+
+<p>
+  <b>Img height:</b>
+  <%=h @artwork.img_height %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%=h @artwork.year %>
+</p>
+
+
+<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+<%= link_to 'Back', artworks_path %>

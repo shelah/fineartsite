@@ -1,0 +1,260 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (397.2ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (596.4ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateArtworks (20130106143708)
+  [4;36;1mSQL (405.5ms)[0m   [0;1mCREATE TABLE `artworks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `width` float, `height` float, `img_width` int(11), `img_height` int(11), `year` date, `img_file` varchar(255), `thumbnail_file` varchar(255), `series_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (43.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20130106143708')[0m
+Migrating to CreateSeries (20130106144015)
+  [4;36;1mSQL (324.5ms)[0m   [0;1mCREATE TABLE `series` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `begin_date` date, `end_date` date, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (42.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20130106144015')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `artworks`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `artworks`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `artworks`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `series`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `series`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `series`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2013-01-06 11:03:38) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2013-01-06 11:03:49) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2013-01-06 11:06:09) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2013-01-06 11:06:10) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtworksController#index (for 127.0.0.1 at 2013-01-06 11:13:45) [GET]
+  [4;36;1mArtwork Load (0.3ms)[0m   [0;1mSELECT * FROM `artworks` [0m
+Rendering template within layouts/artworks
+Rendering artworks/index
+Completed in 60ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/artworks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SeriesController#index (for 127.0.0.1 at 2013-01-06 12:18:03) [GET]
+  [4;35;1mSeries Load (1.2ms)[0m   [0mSELECT * FROM `series` [0m
+Rendering template within layouts/series
+Rendering series/index
+Completed in 113ms (View: 11, DB: 2) | 200 OK [http://0.0.0.0/series]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SeriesController#index (for 127.0.0.1 at 2013-01-06 12:40:33) [GET]
+  [4;36;1mSeries Load (0.5ms)[0m   [0;1mSELECT * FROM `series` [0m
+Rendering template within layouts/series
+Rendering series/index
+  [4;35;1mSeries Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `series`[0m
+  [4;36;1mArtwork Load (0.3ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 1) [0m
+  [4;35;1mArtwork Load (0.3ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 2) [0m
+  [4;36;1mArtwork Load (0.3ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 3) [0m
+  [4;35;1mArtwork Load (0.2ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 4) [0m
+  [4;36;1mArtwork Load (0.0ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 5) [0m
+  [4;35;1mArtwork Load (0.2ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 6) [0m
+  [4;36;1mArtwork Load (8.6ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 7) [0m
+  [4;35;1mArtwork Load (0.2ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 8) [0m
+  [4;36;1mArtwork Load (0.2ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 9) [0m
+  [4;35;1mArtwork Load (0.6ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 10) [0m
+  [4;36;1mArtwork Load (0.4ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 11) [0m
+Completed in 123ms (View: 102, DB: 13) | 200 OK [http://0.0.0.0/series]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtworksController#index (for 127.0.0.1 at 2013-01-06 12:40:51) [GET]
+  [4;35;1mArtwork Load (0.2ms)[0m   [0mSELECT * FROM `artworks` [0m
+Rendering template within layouts/artworks
+Rendering artworks/index
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/artworks]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtworksController#show (for 127.0.0.1 at 2013-01-06 13:53:15) [GET]
+  Parameters: {"id"=>"home"}
+  [4;36;1mArtwork Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `artworks`[0m
+  [4;35;1mArtwork Load (0.3ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Artwork with ID=home):
+  app/controllers/artworks_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.2ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtworksController#show (for 127.0.0.1 at 2013-01-06 13:53:23) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mArtwork Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `artworks`[0m
+  [4;35;1mArtwork Load (0.1ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Artwork with ID=show):
+  app/controllers/artworks_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (62.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtworksController#index (for 127.0.0.1 at 2013-01-06 13:53:28) [GET]
+  [4;36;1mArtwork Load (0.1ms)[0m   [0;1mSELECT * FROM `artworks` [0m
+Rendering template within layouts/artworks
+Rendering artworks/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/artworks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SeriesController#index (for 127.0.0.1 at 2013-01-06 13:53:44) [GET]
+  [4;35;1mSeries Load (0.3ms)[0m   [0mSELECT * FROM `series` [0m
+Rendering template within layouts/series
+Rendering series/index
+  [4;36;1mSeries Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `series`[0m
+  [4;35;1mArtwork Load (0.1ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 1) [0m
+  [4;36;1mArtwork Load (0.1ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 2) [0m
+  [4;35;1mArtwork Load (0.1ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 3) [0m
+  [4;36;1mArtwork Load (0.1ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 4) [0m
+  [4;35;1mArtwork Load (0.1ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 5) [0m
+  [4;36;1mArtwork Load (0.1ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 6) [0m
+  [4;35;1mArtwork Load (0.2ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 7) [0m
+  [4;36;1mArtwork Load (0.1ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 8) [0m
+  [4;35;1mArtwork Load (0.2ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 9) [0m
+  [4;36;1mArtwork Load (0.1ms)[0m   [0;1mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 10) [0m
+  [4;35;1mArtwork Load (0.1ms)[0m   [0mSELECT * FROM `artworks` WHERE (`artworks`.series_id = 11) [0m
+Completed in 43ms (View: 34, DB: 2) | 200 OK [http://0.0.0.0/series]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtworksController#index (for 127.0.0.1 at 2013-01-06 13:54:01) [GET]
+  [4;36;1mArtwork Load (0.2ms)[0m   [0;1mSELECT * FROM `artworks` [0m
+Rendering template within layouts/artworks
+Rendering artworks/index
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/artworks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtworksController#new (for 127.0.0.1 at 2013-01-06 13:54:02) [GET]
+  [4;35;1mArtwork Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `artworks`[0m
+Rendering template within layouts/artworks
+Rendering artworks/new
+Completed in 68ms (View: 60, DB: 1) | 200 OK [http://0.0.0.0/artworks/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ArtworksController#index (for 127.0.0.1 at 2013-01-06 13:54:07) [GET]
+  [4;36;1mArtwork Load (0.2ms)[0m   [0;1mSELECT * FROM `artworks` [0m
+Rendering template within layouts/artworks
+Rendering artworks/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/artworks]
