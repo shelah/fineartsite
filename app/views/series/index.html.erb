@@ -8,7 +8,7 @@
     <th>Artwork</th>
   </tr>
 
-<% @series.each do |series| %>
+<% @series.reverse.each do |series| %>
   <tr>
     <td><%=h series.name %></td>
     <td><%=h series.begin_date %></td>
