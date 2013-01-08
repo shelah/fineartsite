@@ -13,11 +13,15 @@
   <%=h @series.end_date %>
 </p>
 
-<p>
-  <b>Artwork:</b>
-  <%=h @series.artwork %>
-</p>
-
+<table>
+  <tbody>
+    <% @series.artworks.each do |artwork| %>
+        <tr>
+          <td><%=h artwork.title %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_series_path(@series) %> |
 <%= link_to 'Back', series_path %>

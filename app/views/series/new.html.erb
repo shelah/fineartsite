@@ -1,6 +1,6 @@
 <h1>New series</h1>
 
-<% form_for(@series) do |f| %>
+<% form_for(:series) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,12 +16,8 @@
     <%= f.date_select :end_date %>
   </p>
   <p>
-    <%= f.label :artwork %><br />
-    <%= f.text_field :artwork %>
-  </p>
-  <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', series_path %>
+<%= link_to 'Back', :controller => 'series', :action => 'index' %>

@@ -9,7 +9,7 @@ class CreateArtworks < ActiveRecord::Migration
       t.date :year
       t.string :img_file
       t.string :thumbnail_file
-      t.integer :series_id
+      t.references :series
 
       t.timestamps
     end

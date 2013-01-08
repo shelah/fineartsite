@@ -1,8 +1,13 @@
 class ArtworksController < ApplicationController
+  before_filter :get_series
   # GET /artworks
   # GET /artworks.xml
   def index
-    @artworks = Artwork.all
+    if @series
+      @artworks = @series.artworks
+    else
+      @artworks = Artwork.find_all_by_series_id(:series_id)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +18,11 @@ class ArtworksController < ApplicationController
   # GET /artworks/1
   # GET /artworks/1.xml
   def show
-    @artwork = Artwork.find(params[:id])
+    if @series
+      @artwork = @series.artworks.find(params[:id])
+    else
+      @artwork = Artwork.find(params[:id])
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -40,15 +49,16 @@ class ArtworksController < ApplicationController
   # POST /artworks
   # POST /artworks.xml
   def create
-    @artwork = Artwork.new(params[:artwork])
+    @artwork = @series.artworks.build(params[:artwork])
 
     respond_to do |format|
-      if @artwork.save
-        format.html { redirect_to(@artwork, :notice => 'Artwork was successfully created.') }
-        format.xml  { render :xml => @artwork, :status => :created, :location => @artwork }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
+      format.html do
+        if @artwork.save
+          flash[:notice] = 'Artwork was successfully created.'
+          redirect_to series_artwork_path(@series.id, @artwork)
+        else
+          render :action => "new"
+        end
       end
     end
   end
@@ -59,25 +69,33 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.find(params[:id])
 
     respond_to do |format|
-      if @artwork.update_attributes(params[:artwork])
-        format.html { redirect_to(@artwork, :notice => 'Artwork was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
+      format.html do
+        if @artwork.update_attributes(params[:artwork])
+          redirect_to series_artwork_path(@artwork.series_id, @artwork)
+        else
+          render :action => "edit"
+        end
       end
-    end
+     end
   end
 
   # DELETE /artworks/1
   # DELETE /artworks/1.xml
   def destroy
-    @artwork = Artwork.find(params[:id])
+    @artwork = @series.artworks.find(params[:id])
     @artwork.destroy
 
     respond_to do |format|
-      format.html { redirect_to(artworks_url) }
+      format.html { redirect_to(series_index(@series.id)) }
       format.xml  { head :ok }
     end
   end
+
+  private
+  def get_series
+    if (params[:series_id])
+      @series = Series.find(params[:series_id])
+    end
+  end
+
 end

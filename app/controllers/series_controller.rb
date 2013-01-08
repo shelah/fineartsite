@@ -14,6 +14,7 @@ class SeriesController < ApplicationController
   # GET /series/1.xml
   def show
     @series = Series.find(params[:id])
+    @artworks = @series.artworks
 
     respond_to do |format|
       format.html # show.html.erb
@@ -76,8 +77,25 @@ class SeriesController < ApplicationController
     @series.destroy
 
     respond_to do |format|
-      format.html { redirect_to(series_url) }
+      format.html { redirect_to(series_path) }
       format.xml  { head :ok }
     end
   end
+
+  def new_artwork
+    @series = Series.find(params[:id])
+    @artwork = @series.artworks.build
+  end
+
+  def create_artwork
+    @series = Series.find(params[:id])
+    @artwork = @series.artworks.build
+    if @artwork.save
+      flash[:notice] = "Your artwork was successfully added."
+      redirect_to :action => 'show', :id => @series.id
+    else
+      render :template => "new_actor"
+    end
+  end
+
 end
