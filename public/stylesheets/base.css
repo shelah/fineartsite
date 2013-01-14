@@ -1,0 +1,62 @@
+/* REMOVE PADDING AND MARGIN VALUES */
+a, abbr, acronym, address, applet, b, big, blockquote, body, caption, center, cite, code,
+del, dfn, div, dd, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe,
+img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong,
+sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, tt, u, ul, var
+{margin: 0;  padding: 0; border: none; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+html, body { color: #000; }
+
+/* Unitless line-height prevents passing computed result to descendants */
+body { line-height: 1; }
+
+/* Define focus styles */
+:focus { outline: 0; }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* SORT OUT HEADER FORMATTING AND SIZES */
+h1, h2, h3, h4, h5 {font-weight: bold;}
+h1 {font-size: 140%;}
+h2 {font-size: 130%;}
+h3 {font-size: 110%;}
+h4 {font-size: 100%;}
+h5 {font-size: 100%;}
+h6 {font-size: 100%;}
+
+/* HARMONIZE LINKS, KILL BORDER ON IMG LINKS */
+a {text-decoration: underline;}
+a:link, a:visited {color: #00f;}
+a:hover {color: #33f;}
+a:active {color: #fff;}
+a img, :link img, :visited img {border: none}
+
+/* REMOVE BROWSERS DEFAULT TABLE BORDERS */
+table {border-collapse: collapse; border-spacing: 0; margin: 10px 0px 10px 0px;}
+table th, table td {vertical-align: top; padding: 2px 5px; text-align: left;}
+table th {font-weight: bold;}
+
+/* REMOVE AUTOMATIC TOP/BOTTOM MARGINS ON NESTED LISTS */
+ul ul, ul ol, ul dir, ul menu, ul dl,
+ol ul, ol ol, ol dir, ol menu, ol dl,
+dir ul, dir ol, dir dir, dir menu, dir dl,
+menu ul, menu ol, menu dir, menu menu, menu dl,
+dl ul, dl ol, dl dir, dl menu, dl dl
+{margin-top: 0; margin-bottom: 0;}
+
+/* Any item inside another should be same size as parent */
+li li, li p, td p, th p, th li, td li, td input, th input, td select, th select, td textarea, dd p, dt p, td td, td th, th td, th th, p input, li a
+{ font-size: 1.0em; }
+
+/* HARMONISE LIST-BULLET TYPE */
+ul, dl {list-style-type: disc;}
+
+/* STANDARD UL */
+ul, ol { margin: 0px; padding: 0px 10px 10px 25px; }
+
+ul li, ol li { margin: 5px 0px 0px 0px; padding: 0px; }
+/* END OF BASE.CSS */

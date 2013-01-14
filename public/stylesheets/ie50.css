@@ -1,0 +1,49 @@
+/* The following are tweaks for IE5.0 */
+
+body, table
+{
+	font-size: x-small;
+}
+
+#container
+{
+	float: none;
+	padding-top: 24px;
+}
+
+/* Needed to tweak the padding a bit */
+
+@media all
+{
+	* html #navbar ul li a {height: 0;}
+	* html #footer a {height: 0;}
+}
+
+#navbar ul, #footer ul
+{
+	line-height: 20px;
+}
+
+#navbar ul, #footer ul
+{
+	width: 740px;
+}
+
+#navbar ul li a
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#main
+{
+	/* Weird bug that causes main text to go below right floating sidebar depending
+		on size and spacing of sidebar paragraph text.
+	*/
+	width: 367px;
+}
+
+#container-db ul.subnav li a, #container-db ul.subnav li a:visited
+{
+	background: none;
+}
