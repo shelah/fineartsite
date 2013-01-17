@@ -1,26 +1,17 @@
-<h1>Listing series</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Begin date</th>
-    <th>End date</th>
-    <th>Artwork</th>
-  </tr>
-
-<% @series.reverse.each do |series| %>
-  <tr>
-    <td><%=h series.name %></td>
-    <td><%=h series.begin_date %></td>
-    <td><%=h series.end_date %></td>
-    <td><%=h series.artworks %></td>
-    <td><%= link_to 'Show', series %></td>
-    <td><%= link_to 'Edit', edit_series_path(series) %></td>
-    <td><%= link_to 'Destroy', series, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New series', new_series_path %>
+<div class='navbar'>
+</div>
+<div id='container'>
+  <div id="container-content">
+    <div id="sidebar">
+      <ul>
+        <% @series.reverse.each do |series| %>
+            <li><%=h link_to series.name, :id => series.id, :action => 'show' %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="main">
+      <div id="main-painting">
+      </div>
+    </div>
+  </div>
+</div>
