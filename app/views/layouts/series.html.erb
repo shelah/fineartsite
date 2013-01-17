@@ -9,10 +9,7 @@
   <%= stylesheet_link_tag 'shelah' %>
 </head>
 <body>
-  <div class="banner">
-    <%= image_tag 'graphics/logo_smash_10pt.png', :alt => "Shelah Horvitz", :size => "531x33" %>
-  </div>
-
+  <%= render "shared/header" %>
 <p style="color: green"><%= notice %></p>
 
 <%= yield %>
