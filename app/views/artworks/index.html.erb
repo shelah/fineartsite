@@ -27,4 +27,5 @@
 
 <br />
 
-<%= link_to 'New artwork', new_artwork_path %>
+<%= link_to 'New Artwork', new_series_artwork_path(@series.id) %>
+<%= link_to 'Back', series_url(@series.id) %>
