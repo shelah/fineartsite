@@ -19,13 +19,10 @@
     <td><%=h artwork.img_height %></td>
     <td><%=h artwork.year %></td>
     <td><%= link_to 'Show', artwork %></td>
-    <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
-    <td><%= link_to 'Destroy', artwork, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Artwork', new_series_artwork_path(@series.id) %>
 <%= link_to 'Back', series_url(@series.id) %>

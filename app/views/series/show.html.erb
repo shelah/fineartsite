@@ -1,17 +1,22 @@
-<p>
-  <b>Name:</b>
-  <%=h @series.name %>
-</p>
-
-<p>
-  <b>Begin date:</b>
-  <%=h @series.begin_date %>
-</p>
-
-<p>
-  <b>End date:</b>
-  <%=h @series.end_date %>
-</p>
+<div id='container'>
+  <div id="container-content">
+    <div id="sidebar">
+      <ul>
+        <% @series_plural.reverse.each do |series| %>
+            <li><%=h link_to series.name, :id => series.id, :action => 'show' %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="main">
+      <div id="main-content">
+        <h1><%=h @series.name %>&nbsp;(<%=h @series.begin_date %>)</h1>
+        <% @series.artworks.length.times do |i| %>
+          <%=h @series.artworks[i].title %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <table>
   <tbody>
@@ -23,6 +28,4 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_series_path(@series) %> |
-<%= link_to 'Manage Artworks', series_artworks_path(@series) %> |
 <%= link_to 'Back', :controller => 'series', :action => 'index' %>

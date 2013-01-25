@@ -1,10 +1,8 @@
-<div class='navbar'>
-</div>
 <div id='container'>
   <div id="container-content">
     <div id="sidebar">
       <ul>
-        <% @series.reverse.each do |series| %>
+        <% @series_plural.reverse.each do |series| %>
             <li><%=h link_to series.name, :id => series.id, :action => 'show' %></li>
         <% end %>
       </ul>

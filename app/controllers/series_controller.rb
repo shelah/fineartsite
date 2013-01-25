@@ -2,17 +2,18 @@ class SeriesController < ApplicationController
   # GET /series
   # GET /series.xml
   def index
-    @series = Series.all
+    @series_plural = Series.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @series }
+      format.xml  { render :xml => @series_plural }
     end
   end
 
   # GET /series/1
   # GET /series/1.xml
   def show
+    @series_plural = Series.all
     @series = Series.find(params[:id])
     @artworks = @series.artworks
 
