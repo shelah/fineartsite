@@ -10,4 +10,16 @@ module SeriesHelper
     end
     str
   end
+
+  # Returns true if the index of the artwork is a multiple
+  # of the square root of the number of artworks in the series
+  def output_for_sqrt_artworks_row(index)
+    html = ""
+    if (0 == (index + 1) % Math.sqrt(@series.artworks.length).ceil)
+      html = <<HTML
+        <br/>
+HTML
+    end
+    html
+  end
 end

@@ -11,7 +11,9 @@
       <div id="main-content">
         <h1><%=h @series.name %>&nbsp;(<%= format_datespan %>)</h1>
         <% @series.artworks.length.times do |i| %>
-          <%=h @series.artworks[i].title %>
+          <%= link_to image_tag(@series.artworks[i].thumbnail_file, :alt => @series.artworks[i].title, :size => "80x80"),
+              :controller => :artworks, :id => @series.artworks[i].id, :series_id => @series.id, :action => :show %>
+          <%=  output_for_sqrt_artworks_row(i) %>
         <% end %>
       </div>
     </div>
