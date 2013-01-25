@@ -18,6 +18,7 @@ class ArtworksController < ApplicationController
   # GET /artworks/1
   # GET /artworks/1.xml
   def show
+    @series_plural = Series.all
     if @series
       @artwork = @series.artworks.find(params[:id])
     else
