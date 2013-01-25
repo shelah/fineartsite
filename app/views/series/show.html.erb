@@ -18,14 +18,4 @@
   </div>
 </div>
 
-<table>
-  <tbody>
-    <% @series.artworks.each do |artwork| %>
-        <tr>
-          <td><%=h artwork.title %></td>
-        </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <%= link_to 'Back', :controller => 'series', :action => 'index' %>
