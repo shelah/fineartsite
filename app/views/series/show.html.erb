@@ -9,7 +9,7 @@
     </div>
     <div id="main">
       <div id="main-content">
-        <h1><%=h @series.name %>&nbsp;(<%=h @series.begin_date %>)</h1>
+        <h1><%=h @series.name %>&nbsp;(<%= format_datespan %>)</h1>
         <% @series.artworks.length.times do |i| %>
           <%=h @series.artworks[i].title %>
         <% end %>
