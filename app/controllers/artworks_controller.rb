@@ -1,5 +1,7 @@
 class ArtworksController < ApplicationController
   before_filter :get_series
+  before_filter :authorize, :only => [:edit, :update]
+
   # GET /artworks
   # GET /artworks.xml
   def index

@@ -1,4 +1,6 @@
 class SeriesController < ApplicationController
+  before_filter :authorize, :only => [:edit, :update]
+
   # GET /series
   # GET /series.xml
   def index
