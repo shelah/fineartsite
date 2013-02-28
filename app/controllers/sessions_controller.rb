@@ -3,6 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # countermeasure to session fixation
+    reset_session
+
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
