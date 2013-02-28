@@ -1,13 +1,15 @@
 <div class="banner">
   <%= link_to image_tag('graphics/logo_smash_10pt.png', :alt => "Shelah Horvitz", :size => "531x33"),
   :controller => :series, :action => 'index' %>
-  <% if current_user %>
-      Logged in as <%= current_user.email %>.
+  <div class="adminlinks">
+    <% if current_user %>
+      <span>Logged in as <%= current_user.email %>.</span>
       <%= link_to "Log Out", logout_path %>
-  <% else %>
-      <%= link_to "Sign Up", signup_path %> or
+    <% else %>
       <%= link_to "Log In", login_path %>
-  <% end %></div>
+    <% end %>
+  </div>
+</div>
 
 <div class="navbar">
   <ul>
