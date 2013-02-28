@@ -69,10 +69,17 @@ a:hover, a:active {	color: #000; }
 
 textarea { width: auto; }
 
+.adminform
+{
+    text-align: left;
+    float: left;
+    margin-left: 3em;
+}
+
 .adminlinks
 {
     float: right;
-    margin-right: 2em;
+    margin-right: 3em;
 }
 
 .adminlinks a

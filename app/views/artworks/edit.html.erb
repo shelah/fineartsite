@@ -1,36 +1,38 @@
-<h1>Editing artwork</h1>
+<div class="adminform">
+  <h1>Edit artwork</h1>
 
-<% form_for(@artwork) do |f| %>
-  <%= f.error_messages %>
+  <% form_for(@artwork, :url => edit_series_artwork_url,
+              :html => { :multipart => true }) do |f| %>
+      <%= f.error_messages %>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :width %><br />
-    <%= f.text_field :width %>
-  </p>
-  <p>
-    <%= f.label :height %><br />
-    <%= f.text_field :height %>
-  </p>
-  <p>
-    <%= f.label :img_width %><br />
-    <%= f.text_field :img_width %>
-  </p>
-  <p>
-    <%= f.label :img_height %><br />
-    <%= f.text_field :img_height %>
-  </p>
-  <p>
-    <%= f.label :year %><br />
-    <%= f.text_field :year %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+      <p>
+        <%= f.label :title %><br />
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :width %><br />
+        <%= f.text_field :width %>
+      </p>
+      <p>
+        <%= f.label :height %><br />
+        <%= f.text_field :height %>
+      </p>
+      <p>
+        <%= f.label :img_width %><br />
+        <%= f.text_field :img_width %>
+      </p>
+      <p>
+        <%= f.label :img_height %><br />
+        <%= f.text_field :img_height %>
+      </p>
+      <p>
+        <%= f.label :year %><br />
+        <%= f.text_field :year %>
+      </p>
+      <p>
+        <%= f.submit 'Update' %>
+      </p>
+  <% end %>
 
-<%= link_to 'Show', @artwork %> |
-<%= link_to 'Back', artworks_path %>
+  <%= link_to 'Back', series_artwork_path(@artwork.series_id, @artwork.id) %>
+</div>

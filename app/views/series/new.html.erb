@@ -1,23 +1,25 @@
-<h1>New series</h1>
+<div class="adminform">
+  <h1>New series</h1>
 
-<% form_for(:series) do |f| %>
-  <%= f.error_messages %>
+  <% form_for(:series) do |f| %>
+    <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :begin_date %><br />
-    <%= f.date_select :begin_date %>
-  </p>
-  <p>
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :begin_date %><br />
+      <%= f.date_select :begin_date %>
+    </p>
+    <p>
+      <%= f.label :end_date %><br />
+      <%= f.date_select :end_date %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>
 
-<%= link_to 'Back', :controller => 'series', :action => 'index' %>
+  <%= link_to 'Back', :controller => 'series', :action => 'index' %>
+</div>

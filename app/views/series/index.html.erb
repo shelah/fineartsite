@@ -1,3 +1,9 @@
+<% if current_user %>
+    <div class='adminlinks'>
+      <%= link_to 'New Series', new_series_url() %>
+    </div>
+<% end %>
+
 <div id='container'>
   <div id="container-content">
     <div id="sidebar">

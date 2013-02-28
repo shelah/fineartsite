@@ -1,3 +1,10 @@
+<% if current_user %>
+    <div class='adminlinks'>
+      <%= link_to 'New Artwork', new_series_artwork_url(@series.id) %>&nbsp;|&nbsp;
+      <%= link_to 'Edit Series', edit_series_url(@series.id) %>
+    </div>
+<% end %>
+
 <div id='container'>
   <div id="container-content">
     <div id="sidebar">
