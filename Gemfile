@@ -36,3 +36,22 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# To test using RSpec
+gem 'rspec'
+
+# To use JQuery from Ruby
+gem 'execjs'
+
+# To execute Ruby code from within JavaScript
+gem 'therubyracer'
+
+# language independence for admin panel
+gem 'i18n'
+
+# MySQL support
+gem 'activerecord-mysql-adapter'
+gem 'mysql2'
+
+# Admin panel
+gem 'activeadmin'
