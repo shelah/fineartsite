@@ -33,6 +33,7 @@ test:
   reconnect: false
   database: fineartsite_test
   pool: 5
+  username: shelah_test
   password: shelah_test
   socket: /var/run/mysqld/mysqld.sock
 

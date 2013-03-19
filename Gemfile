@@ -38,7 +38,9 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 # To test using RSpec
-gem 'rspec'
+group :test, :development do
+  gem "rspec-rails", "~> 2.4"
+end
 
 # To use JQuery from Ruby
 gem 'execjs'
