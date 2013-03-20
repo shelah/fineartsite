@@ -55,5 +55,8 @@ gem 'i18n'
 gem 'activerecord-mysql-adapter'
 gem 'mysql2'
 
+# Image file uploading
+gem 'paperclip'
+
 # Admin panel
 gem 'activeadmin'

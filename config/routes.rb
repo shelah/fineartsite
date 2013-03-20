@@ -1,4 +1,7 @@
 Fineartsite::Application.routes.draw do
+  resources :artworks
+
+
   resources :series
 
 
