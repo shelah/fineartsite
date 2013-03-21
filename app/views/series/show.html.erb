@@ -1,20 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @series.name %>
-</p>
-
-<p>
-  <b>Begin date:</b>
-  <%= @series.begin_date %>
-</p>
-
-<p>
-  <b>End date:</b>
-  <%= @series.end_date %>
-</p>
-
-
-<%= link_to 'Edit', edit_series_path(@series) %> |
-<%= link_to 'Back', series_index_path %>
+<div id='container'>
+  <div id="container-content">
+    <div id="sidebar">
+      <ul>
+        <% @series_plural.reverse.each do |series| %>
+          <li><%=h link_to series.name, :id => series.id, :action => 'show' %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="main">
+      <div id="main-content">
+        <h1><%=h @series.name %>&nbsp;(<%= format_datespan %>)</h1>
+        <% @series.artworks.length.times do |i| %>
+          <%= link_to image_tag(@series.artworks[i].thumbnail, :alt => @series.artworks[i].title, :size => "80x80"),
+                      :controller => :artworks, :id => @series.artworks[i].id, :series_id => @series.id, :action => :show %>
+          <%=  output_for_sqrt_artworks_row(i) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

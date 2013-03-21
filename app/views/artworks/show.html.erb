@@ -1,35 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @artwork.title %>
-</p>
+<div id='container'>
+  <div id="container-content">
+    <div id="sidebar">
+      <ul>
+        <% @series_plural.reverse.each do |series| %>
+          <li><%=h link_to series.name, :controller => :series, :id => series.id, :action => 'show' %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="main">
+      <div id="main-painting">
+        <h1><%=h @series.name %>&nbsp;(<%= format_datespan %>)</h1>
+        <div class="directionals"><%= conditional_prev_link %></div>
+        <div class="directionals"><%= conditional_next_link %></div>
+        <br>
 
-<p>
-  <b>Width:</b>
-  <%= @artwork.width %>
-</p>
+        <%= image_tag(@artwork.image, :alt => @artwork.title, :size => format_size) %>
 
-<p>
-  <b>Height:</b>
-  <%= @artwork.height %>
-</p>
+        <br>
+        <div id="title"><%= @artwork.title %></div>
 
-<p>
-  <b>Img width:</b>
-  <%= @artwork.img_width %>
-</p>
-
-<p>
-  <b>Img height:</b>
-  <%= @artwork.img_height %>
-</p>
-
-<p>
-  <b>Year:</b>
-  <%= @artwork.year %>
-</p>
-
-
-<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Back', artworks_path %>
+        (<div id="year"><%= @artwork.year.year.to_s %></div>,&nbsp;
+        <div id="medium"><%= @artwork.medium %></div>,&nbsp;
+        <div id="size"><%= format_dimension(@artwork.width) %>&quot;&nbsp;x&nbsp;<%= format_dimension(@artwork.height) %>&quot;</div>)
+      </div>
+    </div>
+  </div>
+</div>
