@@ -35,6 +35,14 @@
     <%= f.label :year %><br />
     <%= f.date_select :year %>
   </div>
+  <div class="field">
+    <%=  f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :thumbnail %>
+    <%= f.file_field :thumbnail %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

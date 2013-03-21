@@ -39,4 +39,8 @@ Fineartsite::Application.configure do
   # Note: this will only work for Webrick. It won't work for Apache.
   # For real configuration see http://railscasts.com/episodes/206-action-mailer-in-rails-3
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Configuration for Paperclip file uploader
+  # See https://github.com/thoughtbot/paperclip#readme
+  Paperclip.options[:command_path] = "/usr/bin/"
 end

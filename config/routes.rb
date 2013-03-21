@@ -1,9 +1,9 @@
 Fineartsite::Application.routes.draw do
-  resources :artworks
-
-
-  resources :series
-
+#  resources :artworks
+  resources :series do
+    resources :artworks
+  end
+  root :to => "series#index"
 
   ActiveAdmin.routes(self)
 

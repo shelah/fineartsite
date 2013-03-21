@@ -189,7 +189,7 @@ DEPENDENCIES
   i18n
   jquery-rails
   mysql2
-  paperclip
+  paperclip (~> 3.0)
   rails (= 3.2.12)
   rspec-rails (~> 2.4)
   sass-rails (~> 3.2.3)
