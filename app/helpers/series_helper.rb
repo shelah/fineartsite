@@ -20,6 +20,6 @@ module SeriesHelper
         <br/>
 HTML
     end
-    html
+    html.html_safe
   end
 end
