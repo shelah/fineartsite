@@ -16,7 +16,8 @@
 <%# <br /> %>
 <%#      <%= f.select_tag :series_id, options_from_collection_for_select(@series, "id", "name") %>
 <%#    </div> %>
-  <%= f.inputs :name => "Series" do %>
+  <%= f.inputs :name => "Artwork" do %>
+    <%= f.input :series %>
     <%= f.input :title %>
     <%= f.input :width %>
     <%= f.input :height %>
@@ -27,5 +28,6 @@
     <%= f.input :img_height, :label => 'Image height' %>
     <%= f.input :thumbnail %>
     <%= f.actions %>
+    <%= f.action :cancel, :as => :link, :label => "Cancel" %>
   <% end %>
 <% end %>

@@ -1,4 +1,4 @@
-<%= semantic_form_for [:admin, @series, @artworks], :html => { :multipart => true } do |f| %>
+<%= semantic_form_for [:admin, @series] do |f| %>
   <% if @series.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@series.errors.count, "error") %> prohibited this series from being saved:</h2>
@@ -16,5 +16,6 @@
     <%= f.input :begin_date, :as => :date_select, :start_year => 1980, :end_year => Time.now.year, :discard_day => true %>
     <%= f.input :end_date, :as => :date_select, :start_year => 1980, :end_year => Time.now.year, :discard_day => true, :include_blank => true %>
     <%= f.actions %>
+    <%= f.action :cancel, :as => :link, :label => "Cancel" %>
   <% end %>
 <% end %>
