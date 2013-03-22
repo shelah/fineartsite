@@ -12,8 +12,7 @@
     <div id="main">
       <div id="main-painting">
         <h1><%=h @series.name %>&nbsp;(<%= format_datespan %>)</h1>
-        <div class="directionals"><%= conditional_prev_link %></div>
-        <div class="directionals"><%= conditional_next_link %></div>
+        <div><%= conditional_prev_link %><%= conditional_next_link %></div>
         <br>
 
         <%= image_tag(@artwork.image, :alt => @artwork.title, :size => format_size) %>
