@@ -2,13 +2,7 @@
 
 <div id='container'>
   <div id="container-content">
-    <div id="sidebar">
-      <ul>
-        <% @series_plural.reverse.each do |series| %>
-          <li><%=h link_to series.name, :controller => :series, :id => series.id, :action => 'show' %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= render "shared/nav_panel" %>
     <div id="main">
       <div id="main-painting">
         <h1><%=h @series.name %>&nbsp;(<%= format_datespan %>)</h1>

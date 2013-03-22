@@ -22,3 +22,5 @@
 # Ignore all test files (as opposed to spec)
 /test
 
+# Ignore Paperclip attachment files
+/public/system/**

@@ -1,12 +1,6 @@
 <div id='container'>
   <div id="container-content">
-    <div id="sidebar">
-      <ul>
-        <% @series_plural.reverse.each do |series| %>
-          <li><%=h link_to series.name, :id => series.id, :action => 'show' %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= render "shared/nav_panel" %>
     <div id="main">
       <div id="main-painting">
       </div>

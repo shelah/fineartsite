@@ -1,0 +1,12 @@
+<div id="sidebar">
+  <ul>
+    <% Series.all.reverse.each do |series| %>
+      <li><%=h link_to series.name, :controller => :series, :id => series.id, :action => 'show' %></li>
+    <% end %>
+  </ul>
+<%#
+  <div>
+    Sign up for show announcements
+  </div>
+%>
+</div>
