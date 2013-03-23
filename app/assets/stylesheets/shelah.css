@@ -188,7 +188,7 @@ textarea { width: auto; }
 	}
 
 
-#sidebar
+.sidebar
 {
 	float: left;
 	width: 220px;
@@ -198,33 +198,48 @@ textarea { width: auto; }
 	text-align: left;
 }
 
-	#sidebar ul
+	.sidebar ul
 	{
 		list-style: none;
 		padding: 0px 10px 10px 40px;
 	}
 
-		#sidebar ul li
+		.sidebar ul li
 		{
 			padding: 2px 0px;
 		}
 
-			#sidebar ul li a, #sidebar ul li a:visited
+			.sidebar ul li a, .sidebar ul li a:visited
 			{
 				text-decoration: none;
 				font-weight: bold;
 				color: #666;
 			}
 
-			#sidebar ul li a:hover, #sidebar ul li a:active
+			.sidebar ul li a:hover, .sidebar ul li a:active
 			{
 				color: #5cade2;
 			}
 
-			#sidebar ul li a#urhere
+			.sidebar ul li a#urhere
 			{
 				color: #5cade2;
 			}
+
+#mad_mimi_signup_form fieldset
+{
+    margin-top: 5em;
+    border: none;
+    float: left;
+    margin: 5em 20px 0 20px;
+    padding: 0;
+    width: 120px;
+}
+
+#mad_mimi_signup_form #signup_email
+{
+    max-width: 70%;
+}
 
 #bio-img
 {

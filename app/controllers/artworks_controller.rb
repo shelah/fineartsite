@@ -7,7 +7,7 @@ class ArtworksController < InheritedResources::Base
     if @series
       @artworks = @series.artworks
     else
-      @artworks = Artwork.find_all_by_series_id(:series_id)
+      @artworks ||= Artwork.find_all_by_series_id(:series_id)
     end
 
     respond_to do |format|
@@ -23,7 +23,7 @@ class ArtworksController < InheritedResources::Base
     if @series
       @artwork = @series.artworks.find(params[:id])
     else
-      @artwork = Artwork.find(params[:id])
+      @artwork ||= Artwork.find(params[:id])
     end
     @prev_id = previous_artwork_id
     @next_id = next_artwork_id
