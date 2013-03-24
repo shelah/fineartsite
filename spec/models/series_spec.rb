@@ -1,32 +1,25 @@
 require 'spec_helper'
 
 describe Series do
-  before(:each) do
-    @valid_attributes = {
-        :name => 'MySeries',
-        :begin_date => Date.current
-    }
+
+  it "has a valid factory" do
+    FactoryGirl.create(:series).should be_valid
   end
 
-  it "should create a new instance given valid attributes" do
-    Series.create!(@valid_attributes)
+  it "is invalid without a name" do
+    FactoryGirl.build(:series, :name => nil, :begin_date => Date.current).should_not be_valid
   end
 
-  it "should ensure that if we have an end date, it is not before the begin date" do
-    series = Series.create!(@valid_attributes)
-    series.end_date = series.begin_date.years_ago(1)
-    series.should_not be_valid
+  it "is invalid without a begin date" do
+    FactoryGirl.build(:series, :name => Faker::Name.name, :begin_date => nil).should_not be_valid
   end
 
-  it "should ensure that if we have an end date equal to the begin date, it is valid" do
-    series = Series.create!(@valid_attributes)
-    series.end_date = series.begin_date
-    series.should be_valid
-  end
+  it "has an end date that is equal to or after the begin date if it has an end date at all" do
+    @series = FactoryGirl.create(:series)
+    @series.end_date = @series.begin_date.years_ago(1)
+    @series.should_not be_valid
 
-  it "should ensure that if the end date is greater than the begin date, it is valid" do
-    series = Series.create!(@valid_attributes)
-    series.end_date = series.begin_date.tomorrow
-    series.should be_valid
+    @series.end_date = @series.begin_date
+    @series.should be_valid
   end
 end

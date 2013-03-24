@@ -40,6 +40,16 @@ gem 'jquery-rails'
 # To test using RSpec
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'rb-readline'
+  gem 'addressable', "~> 2.3.3"
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
 end
 
 # To use JQuery from Ruby

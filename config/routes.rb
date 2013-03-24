@@ -1,5 +1,5 @@
 Fineartsite::Application.routes.draw do
-  resources :series, :only => [ :index, :show, :post ]  do
+  resources :series, :only => [ :index, :show ]  do
     resources :artworks, :only => :show
   end
   root :to => "series#index"

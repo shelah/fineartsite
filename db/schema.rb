@@ -67,10 +67,22 @@ ActiveRecord::Schema.define(:version => 20130320200251) do
     t.string   "medium"
   end
 
+  create_table "homes", :force => true do |t|
+    t.integer  "artwork_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "series", :force => true do |t|
     t.string   "name"
     t.date     "begin_date"
     t.date     "end_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "signups", :force => true do |t|
+    t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
