@@ -9,7 +9,7 @@
         <div><%= conditional_prev_link %><%= conditional_next_link %></div>
         <br>
 
-        <%= image_tag(@artwork.image, :alt => @artwork.title, :size => format_size) %>
+        <%= image_tag(@artwork.image, :alt => @artwork.title, :size => format_size(@artwork.img_width, @artwork.img_height)) %>
 
         <br>
         <div id="title"><%= @artwork.title %></div>

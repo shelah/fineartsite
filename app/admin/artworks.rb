@@ -3,6 +3,7 @@ ActiveAdmin.register Artwork do
   filter :title
   filter :medium
   filter :year
+  filter :home_image
 
   form :partial => "form"
 
@@ -12,5 +13,6 @@ ActiveAdmin.register Artwork do
     column :title
     column :medium
     column :year
+    column :home_image
   end
 end

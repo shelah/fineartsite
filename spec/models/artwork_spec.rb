@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe Artwork do
   it "has a valid factory" do
-    FactoryGirl.create(:artwork).should be_valid
+    FactoryGirl.create(:artwork, :with_home_image).should be_valid
   end
 
   it "is invalid without a title" do
-    @artwork = FactoryGirl.create(:artwork)
+    @artwork = FactoryGirl.create(:artwork, :with_home_image)
     @artwork.title = nil
     @artwork.should_not be_valid
   end
@@ -29,5 +29,11 @@ describe Artwork do
     @artwork = FactoryGirl.create(:artwork)
     @artwork.thumbnail.destroy
     @artwork.should_not be_valid
+  end
+
+  it "should not have more than one home image" do
+    artwork1 = FactoryGirl.create(:artwork, :with_home_image)
+    artwork2 = FactoryGirl.create(:artwork).should be_valid
+    artwork3 = FactoryGirl.create(:artwork, :with_home_image).should_not be_valid
   end
 end

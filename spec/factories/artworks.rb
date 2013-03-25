@@ -9,4 +9,8 @@ FactoryGirl.define do
     f.image {File.new(Rails.root + 'spec/support/images/rails.png')}
     f.thumbnail {File.new(Rails.root + 'spec/support/images/rails.png')}
   end
+
+  trait :with_home_image do
+    home_image true
+  end
 end
