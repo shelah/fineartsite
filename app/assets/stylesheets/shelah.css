@@ -35,6 +35,7 @@ h1
 {
 	font-size: 125.00%;
 	margin: 0px 0px 10px 0px;
+    margin-top: -1em;
 }
 
 h2
@@ -68,6 +69,17 @@ a:visited {	color: #555544; }
 a:hover, a:active {	color: #000; }
 
 textarea { width: auto; }
+
+#artwork_image
+{
+    margin-top: 1em;
+    margin-bottom: 12px;
+    display: none;
+
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+}
 
 .banner
 {
