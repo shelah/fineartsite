@@ -1,5 +1,5 @@
 # Your cPanel/SSH login name
-set :user , "username"
+set :user , "shelah"
 
 # The domain name of the server to deploy to, this can be your domain or the domain of the server.
 set :server_name, "shelah-fineartsite.railsplayground.net"
