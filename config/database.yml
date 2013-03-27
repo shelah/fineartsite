@@ -43,6 +43,6 @@ production:
   reconnect: false
   database: fineartsite_production
   pool: 5
-  username: root
-  password: 
+  username: shelah
+#  password:
   socket: /var/run/mysqld/mysqld.sock
