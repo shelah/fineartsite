@@ -38,11 +38,12 @@ test:
   socket: /var/run/mysqld/mysqld.sock
 
 production:
+  host: shelah-fineartsite.railsplayground.net
+  port: 3306
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: fineartsite_production
+  database: shelahfi_fineartsite
   pool: 5
-  username: shelah
-#  password:
-  socket: /var/run/mysqld/mysqld.sock
+  username: shelahfi_admin
+  password: A1s2D3f4

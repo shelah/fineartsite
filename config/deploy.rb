@@ -1,12 +1,12 @@
 # Your cPanel/SSH login name
-set :user , "shelah"
+set :user , "shelahfi"
 
 # The domain name of the server to deploy to, this can be your domain or the domain of the server.
-set :server_name, "shelah-fineartsite.railsplayground.net"
+set :server_name, "69.25.136.17"
 
 # Your svn / git login name
-set :scm_username , "shelah"
-#set :scm_password, Proc.new { CLI.password_prompt "SVN Password: "}
+set :scm_username, "shelah"
+#set :scm_password, Proc.new { CLI.password_prompt "Git Password: "}
 
 # Your repository type, by default we use subversion.
 #set :scm, :subversion
