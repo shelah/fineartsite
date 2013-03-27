@@ -5,7 +5,8 @@
       <div id="main-painting">
         <%= image_tag(@home_page_artwork.image,
                       :alt => @home_page_artwork.title,
-                      :size => format_size(@home_page_artwork.img_width, @home_page_artwork.img_height)) %>
+                      :size => format_size(@home_page_artwork.img_width, @home_page_artwork.img_height),
+                      :class => 'artwork_image hidden') %>
 
         <br>
         <div id="title"><%= @home_page_artwork.title %></div>

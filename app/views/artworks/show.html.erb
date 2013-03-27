@@ -11,7 +11,7 @@
         <%= image_tag(@artwork.image,
                       :alt => @artwork.title,
                       :size => format_size(@artwork.img_width, @artwork.img_height),
-                      :id => 'artwork_image') %>
+                      :class => 'artwork_image hidden') %>
         <br>
         <div id="title"><%= @artwork.title %></div>
 

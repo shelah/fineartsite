@@ -70,11 +70,10 @@ a:hover, a:active {	color: #000; }
 
 textarea { width: auto; }
 
-#artwork_image
+.artwork_image
 {
     margin-top: 1em;
     margin-bottom: 12px;
-    display: none;
 
     -moz-box-shadow: 10px 10px 5px #888;
     -webkit-box-shadow: 10px 10px 5px #888;
@@ -90,6 +89,11 @@ textarea { width: auto; }
 	/* height: 100px; */
 	background: #fff;
 	position: relative;
+}
+
+.hidden
+{
+    display: none;
 }
 
 .navbar
