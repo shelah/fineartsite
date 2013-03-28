@@ -1,6 +1,7 @@
 class SeriesController < InheritedResources::Base
+  before_filter :get_series_plural
+
   def index
-    @series_plural = Series.all
     @home_page_artwork = Artwork.find_all_by_home_image(true)[0]
 
     respond_to do |format|
@@ -11,12 +12,28 @@ class SeriesController < InheritedResources::Base
   # GET /series/1
   # GET /series/1.xml
   def show
-    @series_plural = Series.all
     @series = Series.find(params[:id])
     @artworks = @series.artworks
 
     respond_to do |format|
       format.html # show.html.erb
     end
+  end
+
+  def statement
+    respond_to do |format|
+      format.html # statement.html.erb
+    end
+  end
+
+  def bio
+    respond_to do |format|
+      format.html # bio.html.erb
+    end
+  end
+
+  protected
+  def get_series_plural
+    @series_plural = Series.all
   end
 end

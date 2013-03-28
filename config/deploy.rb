@@ -45,11 +45,18 @@ namespace :deploy do
     fastcgi::restart
   end
 
+  desc "run migrations"
+  task :migrations do
+    run "cd /home/#{user}/#{application}/current"
+    run "bundle exec rake db:migrate RAILS_ENV=production"
+  end
+
   desc "restart dispatchers"
   task :restart do
     fastcgi::restart
   end
 
+  before 'deploy:restart', 'deploy:migrations'
 end
 
 namespace :fastcgi do
