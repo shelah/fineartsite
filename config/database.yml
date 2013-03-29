@@ -38,8 +38,7 @@ test:
   socket: /var/run/mysqld/mysqld.sock
 
 production:
-  host: shelah-fineartsite.railsplayground.net
-  port: 3306
+  host: localhost
   adapter: mysql
   encoding: utf8
   reconnect: false

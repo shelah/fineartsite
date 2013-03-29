@@ -15,7 +15,7 @@
         <br>
         <div id="title"><%= @artwork.title %></div>
 
-        (<div id="year"><%= @artwork.year.year.to_s %></div>,&nbsp;
+        (<div id="year"><%= @artwork_year %></div>,&nbsp;
         <div id="medium"><%= @artwork.medium %></div>,&nbsp;
         <div id="size"><%= format_dimension(@artwork.width) %>&quot;&nbsp;x&nbsp;<%= format_dimension(@artwork.height) %>&quot;</div>)
       </div>

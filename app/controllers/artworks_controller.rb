@@ -13,6 +13,8 @@ class ArtworksController < InheritedResources::Base
     @prev_id = previous_artwork_id
     @next_id = next_artwork_id
 
+    @artwork_year = @artwork.year.to_s
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @artwork }

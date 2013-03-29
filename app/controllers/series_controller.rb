@@ -6,6 +6,7 @@ class SeriesController < InheritedResources::Base
 
     respond_to do |format|
       format.html # index.html.erb
+      format.xml { render :xml => @series_plural }
     end
   end
 
@@ -17,6 +18,7 @@ class SeriesController < InheritedResources::Base
 
     respond_to do |format|
       format.html # show.html.erb
+      format.xml { render :xml => @series }
     end
   end
 
