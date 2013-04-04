@@ -2,7 +2,7 @@
 set :user , "shelahfi"
 
 # The domain name of the server to deploy to, this can be your domain or the domain of the server.
-set :server_name, "69.25.136.17"
+set :server_name, "75.98.33.134"
 
 # Your svn / git login name
 set :scm_username, "shelah"
@@ -47,8 +47,7 @@ namespace :deploy do
 
   desc "run migrations"
   task :migrations do
-    run "cd /home/#{user}/#{application}/current"
-    run "bundle exec rake db:migrate RAILS_ENV=production"
+    run "cd /home/#{user}/#{application}/current && bundle exec rake db:migrate RAILS_ENV=production"
   end
 
   desc "restart dispatchers"
