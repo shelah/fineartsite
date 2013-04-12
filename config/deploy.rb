@@ -50,6 +50,11 @@ namespace :deploy do
     fastcgi::restart
   end
 
+#  desc "precompile css"
+#  task :precompile_assets do
+#    run "cd /home/#{user}/#{application}/current; bundle exec rake assets:precompile"
+#  end
+
   desc "copy .htaccess to public directory for Passenger"
   task :configure_passenger do
     run "cd /home/#{user}/#{application}/current; cp .htaccess /home/#{user}/#{application}/current/public"
@@ -60,8 +65,9 @@ namespace :deploy do
     run "cd /home/#{user}/#{application}/current; bundle install --path=/home/#{user}/#{application}/shared/bundle"
   end
 
-  before 'deploy:restart', 'deploy:install_gems'
-  before 'deploy:install_gems', 'deploy:configure_passenger'
+  after 'deploy:create_symlink', 'deploy:configure_passenger'
+  after 'deploy:configure_passenger', 'deploy:install_gems'
+#  after 'deploy:install_gems', 'deploy:precompile_assets'
 end
 
 namespace :fastcgi do

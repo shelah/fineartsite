@@ -70,3 +70,7 @@ gem 'paperclip', "~> 3.0"
 
 # Admin panel
 gem 'activeadmin'
+
+# Precompile assets
+#gem 'sass'
+#gem 'has_scope', "~> 0.5.1"
