@@ -13,4 +13,14 @@ class Series < ActiveRecord::Base
       self.errors.add :begin_date, ' has to be after end date'
     end
   end
+
+  class << self
+    def home_page_artwork
+      results = Artwork.find_all_by_home_image(true);
+      if (results.length > 0)
+        results[0]
+      end
+    end
+  end
+
 end

@@ -12,5 +12,7 @@ FactoryGirl.define do
 
   trait :with_home_image do
     home_image true
+    img_width 50
+    img_height 64
   end
 end

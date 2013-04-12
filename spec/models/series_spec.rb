@@ -22,4 +22,17 @@ describe Series do
     @series.end_date = @series.begin_date
     @series.should be_valid
   end
+
+  it "can find the home page artwork for all series and fails gracefully if there is none" do
+    @home_page_artwork = Series.home_page_artwork
+    @home_page_artwork.should be_nil
+    FactoryGirl.create(:artwork, :with_home_image)
+    @home_page_artwork = Series.home_page_artwork
+    @home_page_artwork.should_not be_nil
+    @home_page_artwork.image.should_not be_nil
+    @home_page_artwork.image_file_name.should_not be_nil
+    @home_page_artwork.image_file_name.ends_with?('rails.png').should be_true
+    @home_page_artwork.img_width.equal?(50).should be_true
+    @home_page_artwork.img_height.equal?(64).should be_true
+  end
 end
