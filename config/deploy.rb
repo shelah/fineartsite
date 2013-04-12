@@ -49,6 +49,19 @@ namespace :deploy do
   task :restart do
     fastcgi::restart
   end
+
+  desc "copy .htaccess to public directory for Passenger"
+  task :configure_passenger do
+    run "cd /home/#{user}/#{application}/current; cp .htaccess /home/#{user}/#{application}/current/public"
+  end
+
+  desc "install nonstandard gems"
+  task :install_gems do
+    run "cd /home/#{user}/#{application}/current; bundle install --path=/home/#{user}/#{application}/shared/bundle"
+  end
+
+  before 'deploy:restart', 'deploy:install_gems'
+  before 'deploy:install_gems', 'deploy:configure_passenger'
 end
 
 namespace :fastcgi do
