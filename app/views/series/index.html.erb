@@ -3,19 +3,21 @@
     <%= render "shared/nav_panel" %>
     <div id="main">
       <div id="main-painting">
-        <%= image_tag(@home_page_artwork.image,
-                      :alt => @home_page_artwork.title,
-                      :size => format_size(@home_page_artwork.img_width, @home_page_artwork.img_height),
-                      :class => 'artwork_image hidden') %>
+        <% unless @home_page_artwork.nil? %>
+          <%= image_tag(@home_page_artwork.image.url,
+                        :alt => @home_page_artwork.title,
+                        :size => format_size(@home_page_artwork.img_width, @home_page_artwork.img_height),
+                        :class => 'artwork_image hidden') %>
 
-        <br>
-        <div id="title"><%= @home_page_artwork.title %></div>
+          <br>
+          <div id="title"><%= @home_page_artwork.title %></div>
 
-        (<div id="year"><%= @home_page_artwork.year.year.to_s %></div>,&nbsp;
-        <div id="medium"><%= @home_page_artwork.medium %></div>,&nbsp;
-        <div id="size">
-          <%= format_dimension(@home_page_artwork.width) %>&quot;&nbsp;x&nbsp;<%= format_dimension(@home_page_artwork.height) %>&quot;
-        </div>)
+          (<div id="year"><%= @home_page_artwork.year.year.to_s %></div>,&nbsp;
+          <div id="medium"><%= @home_page_artwork.medium %></div>,&nbsp;
+          <div id="size">
+            <%= format_dimension(@home_page_artwork.width) %>&quot;&nbsp;x&nbsp;<%= format_dimension(@home_page_artwork.height) %>&quot;
+          </div>)
+        <% end %>
       </div>
     </div>
   </div>

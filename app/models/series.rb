@@ -1,6 +1,7 @@
 class Series < ActiveRecord::Base
   has_many :artworks
   attr_accessible :name, :begin_date, :end_date, :artworks
+  attr_readonly :home_page_artwork
 
   validates_presence_of :name
   validates_presence_of :begin_date
